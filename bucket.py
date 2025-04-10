@@ -5,22 +5,12 @@ SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 800
 
 class Bucket(pygame.sprite.Sprite):
-    def __init__(self, color, width, height):
+    def __init__(self, width, height):
         super().__init__()
 
-        self.image = pygame.Surface([width, height])
-        self.image.fill(WHITE)
-        self.image.set_colorkey(WHITE)
-    
-    # Draw left side
-        pygame.draw.rect(self.image, color, [0, 0, 3, height])
+        self.image = pygame.image.load("catbed.png").convert_alpha()
+        self.image = pygame.transform.scale(self.image, (width, height))
 
-    # Draw right side
-        pygame.draw.rect(self.image, color, [width-3, 0, 3, height])
-    
-    # Draw bottom
-        pygame.draw.rect(self.image, color, [0, height-3, width - 2, 3])
-    
     # Get the rectangle of the surface
         self.rect = self.image.get_rect()
 

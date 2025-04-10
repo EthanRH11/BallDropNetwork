@@ -44,8 +44,8 @@ message_timer = 0
 score = 0
 
 all_sprites = pygame.sprite.Group()
-ball = Ball(75, 50)  # Create ball
-playerBucket = Bucket(BLACK, 50, 50)
+ball = Ball(100, 75)  # Create ball
+playerBucket = Bucket(100, 100)
 all_sprites.add(playerBucket, ball)
 
 font = pygame.font.SysFont(None, 36)
