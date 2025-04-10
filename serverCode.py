@@ -33,7 +33,7 @@ GAME_OVER = 2
 current_state = START_SCREEN
 
 # Game parameters
-baseSpeed = 4
+baseSpeed = 6
 bucketSpeed = baseSpeed
 baseGravity = 0.1
 show_speed_message = False
@@ -42,8 +42,8 @@ score = 0
 
 # Create game objects
 all_sprites = pygame.sprite.Group()
-ball = Ball(50, 30) 
-playerBucket = Bucket(BLACK, 50, 50) 
+ball = Ball(100, 75) 
+playerBucket = Bucket(100, 100) 
 all_sprites.add(playerBucket, ball)
 
 stars = []
