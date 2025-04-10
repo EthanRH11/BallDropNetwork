@@ -12,6 +12,7 @@ from bucket import Bucket
 
 pygame.init()
 
+
 # Screen dimensions
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 800
@@ -27,6 +28,13 @@ YELLOW = (255, 255, 0)
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Falling Ball Game")
+
+cat_img = pygame.image.load("zachsCat.png").convert_alpha()
+cat_img = pygame.transform.scale(cat_img, (100, 100))
+
+bed_img = pygame.image.load("catbed.png")
+bed_img = pygame.transform.scale(bed_img, (80, 60))
+
 
 # GAME STATES
 START_SCREEN = 0
@@ -79,11 +87,11 @@ def draw_start_screen():
   
     current_time = pygame.time.get_ticks()
     ball_y = SCREEN_HEIGHT//2 + 50 + 30 * math.sin(current_time / 200)
-    pygame.draw.circle(screen, RED, (SCREEN_WIDTH//2, int(ball_y)), 25)
-    
-    pygame.draw.rect(screen, BLACK, (SCREEN_WIDTH//2 - 30, SCREEN_HEIGHT//2 + 120, 60, 40))
-    
+    cat_pos = (SCREEN_WIDTH//2 - cat_img.get_width()//2, int(ball_y) - cat_img.get_height()//2)
+    screen.blit(cat_img, cat_pos)
 
+    bed_pos = (SCREEN_WIDTH//2 - bed_img.get_width()//2, SCREEN_HEIGHT//2 + 120)
+    screen.blit(bed_img, bed_pos)
     instruction = font.render("Press SPACE to Start", True, WHITE)
     screen.blit(instruction, (SCREEN_WIDTH//2 - instruction.get_width()//2, SCREEN_HEIGHT*3//4))
 
