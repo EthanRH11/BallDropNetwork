@@ -91,6 +91,10 @@ def network_thread():
                 client_command = 'left'
             elif data == 'right':
                 client_command = 'right'
+            elif data == 'up':
+                client_command = 'up'
+            elif data == 'down':
+                client_command = 'down'
             elif data == 'space':
                 if current_state in [START_SCREEN, GAME_OVER]:
                     current_state = PLAYING
