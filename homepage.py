@@ -117,6 +117,10 @@ def connect_to_server(ip_address):
                     sock.send('right'.encode())
                 elif keys[pygame.K_SPACE]:
                     sock.send('space'.encode())
+                elif keys[pygame.K_UP]:
+                    sock.send('up'.encode())
+                elif keys[pygame.K_DOWN]:
+                    sock.send('down'.encode())
                 
                 # Lower delay to make faster
                 pygame.time.delay(30)
